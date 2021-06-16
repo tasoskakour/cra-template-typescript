@@ -1,0 +1,41 @@
+{
+	"name": "@tasoskakour/cra-template-typescript",
+	"version": "0.0.0",
+	"description": "Opinionated Typescript Create React App template",
+	"keywords": [
+		"react",
+		"create-react-app",
+		"template",
+		"cra-template",
+		"typescript",
+		"tasoskakour",
+		"material-ui",
+		"react-router",
+		"eslint",
+		"cypress",
+		"zustand",
+		"apollo-client",
+		"graphql",
+		"google-analytics",
+		"pwa"
+	],
+	"homepage": "https://github.com/tasoskakour/cra-template-typescript#readme",
+	"bugs": {
+		"url": "https://github.com/tasoskakour/cra-template-typescript/issues"
+	},
+	"repository": "github:tasoskakour/cra-template-typescript",
+	"license": "MIT",
+	"author": {
+		"name": "Tasos Kakouris",
+		"email": "tasoskakour@gmail.com",
+		"url": "https://tasoskakour.com"
+	},
+	"main": "template.json",
+	"files": [
+		"template",
+		"template.json"
+	],
+	"publishConfig": {
+		"access": "public"
+	}
+}
