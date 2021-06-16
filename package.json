@@ -1,6 +1,6 @@
 {
 	"name": "@tasoskakour/cra-template-typescript",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Opinionated Typescript Create React App template",
 	"keywords": [
 		"react",
