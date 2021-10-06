@@ -1,10 +1,11 @@
-import { Grid, Link, Typography } from '@material-ui/core';
-import { Loyalty } from '@material-ui/icons';
+import { Grid, Link, Typography } from '@mui/material';
+import { Loyalty } from '@mui/icons-material';
 import { useUiStore } from '../../store/ui';
 
 import Logo from '../common/Logo';
 
 const Home = () => {
+	console.log('YEP');
 	const stuff = useUiStore((state) => state.stuff);
 
 	return (

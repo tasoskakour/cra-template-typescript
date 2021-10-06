@@ -9,7 +9,7 @@
 ## Usage 
 
 ```sh
-$ npx create-react-app my-app --template @tasoskakour/typescript
+$ npx create-react-app my-app --template @tasoskakour/cra-template-typescript
 ```
 
 ### If building a React library

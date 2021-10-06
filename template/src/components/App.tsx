@@ -1,43 +1,22 @@
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { LinearProgress } from '@mui/material';
 
-import { ThemeProvider, StyledEngineProvider } from '@material-ui/core/styles';
-import { SnackbarProviderProps, SnackbarProvider } from 'notistack';
-import * as Sentry from '@sentry/browser';
-import theme from '../utilities/theme';
-import AppRoutes from './AppRoutes';
-import { ApolloProvider, GaProvider } from './providers';
+const Loadable = (props: any) => <Suspense {...props} fallback={<LinearProgress />} />;
 
-Sentry.init({
-	dsn: process.env.REACT_APP_SENTRY_DSN,
-	environment: process.env.REACT_APP_SENTRY_ENVIRONMENT,
-	ignoreErrors: ['ResizeObserver loop limit exceeded'],
-	enabled: process.env.NODE_ENV === 'production',
-});
+const Home = lazy(() => import('./screens/Home'));
 
-const snackbarOptions: SnackbarProviderProps = {
-	maxSnack: 1,
-	autoHideDuration: 4000,
-	anchorOrigin: { vertical: 'top', horizontal: 'center' },
-	// This is to silence ts complaining of missing children in props
-	children: undefined,
-};
-
-const App = () => (
-	<BrowserRouter>
-		<GaProvider>
-			<StyledEngineProvider injectFirst>
-				<CssBaseline />
-				<ThemeProvider theme={theme}>
-					<SnackbarProvider {...snackbarOptions}>
-						<ApolloProvider>
-							<AppRoutes />
-						</ApolloProvider>
-					</SnackbarProvider>
-				</ThemeProvider>
-			</StyledEngineProvider>
-		</GaProvider>
-	</BrowserRouter>
+const AppRoutes = () => (
+	<Routes>
+		<Route
+			element={
+				<Loadable>
+					<Home />
+				</Loadable>
+			}
+			path="/"
+		/>
+	</Routes>
 );
 
-export default App;
+export default AppRoutes;
