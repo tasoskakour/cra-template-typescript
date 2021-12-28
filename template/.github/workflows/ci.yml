@@ -24,13 +24,6 @@ jobs:
       - name: 🧪 Run test script
         run: npm test
 
-      - name: ⬆️ Upload test videos
-        uses: actions/upload-artifact@v2
-        if: ${{ always() }}
-        with:
-          name: test-videos
-          path: cypress/videos
-
       - name: ▶️ Generate coverage report
         run: npm run generate-coverage-report
 

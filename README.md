@@ -2,7 +2,7 @@
 
 > Opinionated Create React App template with Typescript.<sup>1</sup>
 
-<sup>1</sup>: [PWA](https://web.dev/progressive-web-apps/), [eslint](https://eslint.org/), [Material UI](https://material-ui.com/), [react-router](https://reactrouter.com/), [cypress](https://www.cypress.io/), [Google Analytics](https://analytics.google.com/), [Sentry](https://sentry.io/welcome/), [apollo-client](https://www.apollographql.com/docs/react/), [zustand](https://zustand.surge.sh/), [craco](https://github.com/gsoft-inc/craco), and other bits and bobs.
+<sup>1</sup>: [PWA](https://web.dev/progressive-web-apps/), [eslint](https://eslint.org/), [Material UI](https://material-ui.com/), [react-router](https://reactrouter.com/), [jest](https://jestjs.io/), [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/), [Google Analytics](https://analytics.google.com/), [Sentry](https://sentry.io/welcome/), [apollo-client](https://www.apollographql.com/docs/react/), [zustand](https://zustand.surge.sh/), [craco](https://github.com/gsoft-inc/craco), and other bits and bobs.
 
 [![npm](https://img.shields.io/npm/v/@tasoskakour/cra-template-typescript?style=flat&logo=npm&label=)](https://www.npmjs.com/package/@tasoskakour/cra-template-typescript) [![style](https://img.shields.io/badge/tasoskakour.com-blueviolet.svg?style=flat)](https://tasoskakour.com)
 

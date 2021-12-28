@@ -15,7 +15,7 @@ The page will reload if you make edits.
 
 ### `yarn test`
 
-Runs eslint & cypress e2e test.
+Runs eslint & jest tests.
 
 ### `yarn analyze`
 
