@@ -5,14 +5,13 @@ import { useUiStore } from '../../store/ui';
 import Logo from '../common/Logo';
 
 const Home = () => {
-	console.log('YEP');
 	const stuff = useUiStore((state) => state.stuff);
 
 	return (
 		<Grid
+			container
 			alignItems="center"
 			bgcolor="secondary.main"
-			container
 			direction="column"
 			height="100vh"
 			justifyContent="center"

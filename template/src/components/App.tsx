@@ -1,22 +1,34 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { LinearProgress } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { SnackbarProviderProps, SnackbarProvider } from 'notistack';
+import { BrowserRouter } from 'react-router-dom';
+import theme from '../utilities/theme';
+import AppRoutes from './AppRoutes';
+import { ApolloProvider, GaProvider } from './providers';
 
-const Loadable = (props: any) => <Suspense {...props} fallback={<LinearProgress />} />;
+const snackbarOptions: SnackbarProviderProps = {
+	maxSnack: 1,
+	autoHideDuration: 4000,
+	anchorOrigin: { vertical: 'top', horizontal: 'center' },
+	// This is to silence ts complaining of missing children in props
+	children: undefined,
+};
 
-const Home = lazy(() => import('./screens/Home'));
-
-const AppRoutes = () => (
-	<Routes>
-		<Route
-			element={
-				<Loadable>
-					<Home />
-				</Loadable>
-			}
-			path="/"
-		/>
-	</Routes>
+const App = () => (
+	<BrowserRouter>
+		<GaProvider>
+			<StyledEngineProvider injectFirst>
+				<CssBaseline />
+				<ThemeProvider theme={theme}>
+					<SnackbarProvider {...snackbarOptions}>
+						<ApolloProvider>
+							<AppRoutes />
+						</ApolloProvider>
+					</SnackbarProvider>
+				</ThemeProvider>
+			</StyledEngineProvider>
+		</GaProvider>
+	</BrowserRouter>
 );
 
-export default AppRoutes;
+export default App;

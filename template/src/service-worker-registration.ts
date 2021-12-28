@@ -10,12 +10,12 @@ function registerValidSW(swUrl: string, config: any) {
 	navigator.serviceWorker
 		.register(swUrl)
 		.then((registration) => {
-			registration.onupdatefound = () => {
+			registration.addEventListener('updatefound', () => {
 				const installingWorker = registration.installing;
 				if (installingWorker == null) {
 					return;
 				}
-				installingWorker.onstatechange = () => {
+				installingWorker.addEventListener('statechange', () => {
 					if (installingWorker.state === 'installed') {
 						if (navigator.serviceWorker.controller) {
 							console.log(
@@ -27,8 +27,8 @@ function registerValidSW(swUrl: string, config: any) {
 							if (config && config.onSuccess) config.onSuccess(registration);
 						}
 					}
-				};
-			};
+				});
+			});
 		})
 		.catch((error) => console.error('Error during service worker registration:', error));
 }

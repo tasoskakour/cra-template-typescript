@@ -23,10 +23,14 @@ const GaProvider = ({ children }: { children: JSX.Element }) => {
 	return children;
 };
 
-export default (props: any) => {
+const Wrapper = (props: any) => {
+	const { children } = props;
+
 	if (initialized) {
 		return <GaProvider {...props} />;
 	}
 
-	return props.children;
+	return children;
 };
+
+export default Wrapper;
